@@ -1,0 +1,12 @@
+python packages:
+
+1.Transformers
+2.Pytorch
+3.numpy
+4.flask
+5.flask-cors
+6.scikit-learn
+7.awscli
+
+node packages:
+1.npm - cors
