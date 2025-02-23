@@ -60,10 +60,19 @@ document.addEventListener("DOMContentLoaded", () => {
     function addMessage(sender, message) {
         const messageDiv = document.createElement("div");
         messageDiv.classList.add(sender === "user" ? "user-message" : "bot-message");
-        messageDiv.textContent = message;
+      
+        if (sender === "bot") {
+          // Render HTML so the table is displayed properly
+          messageDiv.innerHTML = message;
+        } else {
+          // Keep user messages as text
+          messageDiv.textContent = message;
+        }
+      
         chatLog.appendChild(messageDiv);
         chatLog.scrollTop = chatLog.scrollHeight; // Scroll to the bottom
-    }
+      }
+      
 
     // Function to send user input to the backend
     async function sendMessage() {
